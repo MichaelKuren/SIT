@@ -1,0 +1,23 @@
+extends template
+
+block header
+  include /components/header
+  +createMenu(dictMenu, "My Favorite Linux Distribution 🤩", "Arch Linux")
+block content
+  img.big(src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F-1tdO7rA_KTg%2FVhqgxy_Z1AI%2FAAAAAAAAA8I%2FoQcqAf8gP-w%2Fs1600%2Farch_linux.png&f=1&nofb=1&ipt=b96a0dce98d6ead762c4bb9bd087af6ff85d9c2c712f85bcc013891987125ed8&ipo=images")
+  div.distro
+    h2= archLinux.title
+    p= archLinux.description
+    br
+    p Key features of Arch Linux:
+      each feature in archLinux.keyFeatures
+        br
+        | - #{feature.feature}: 
+        strong= feature.value
+    br
+    p
+      | For more details, visit the 
+      a(href=archLinux.websiteUrl)= archLinux.websiteText
+    br
+block footer
+  include /components/footer

@@ -1,0 +1,134 @@
+
+extends template
+
+block header
+  include /components/header
+  +createMenu(dictMenu, "Home", "Table Page")
+block content
+  section.table
+    h2 Distributions Table
+
+    br
+
+    form
+      h4 Sorting Options
+
+      label(for="sort-1") Primary Sort By:
+      br
+      select#sort-1(name="sort-1")
+        option(value="users-count") Users Count
+        option(value="daily-downloads") Daily Downloads
+        option(value="release-year") Release Year
+      
+      | 
+      label
+        input(type="radio", name="sort-1-order", value="asc", checked)
+        | Ascending
+      | 
+      label
+        input(type="radio", name="sort-1-order", value="desc")
+        | Descending
+      br
+
+      label(for="sort-2") Secondary Sort By: 
+      br
+      select#sort-2(name="sort-2")
+        option(value="users-count") Users Count
+        option(value="daily-downloads") Daily Downloads
+        option(value="release-year") Release Year
+
+      | 
+      label
+        input(type="radio", name="sort-2-order", value="asc", checked)
+        | Ascending
+      | 
+      label
+        input(type="radio", name="sort-2-order", value="desc")
+        | Descending
+      br
+
+      label(for="sort-3") Tertiary Sort By:
+      br
+      select#sort-3(name="sort-3")
+        option(value="users-count") Users Count
+        option(value="daily-downloads") Daily Downloads
+        option(value="release-year") Release Year
+
+      | 
+      label
+        input(type="radio", name="sort-3-order", value="asc", checked)
+        | Ascending
+      | 
+      label
+        input(type="radio", name="sort-3-order", value="desc")
+        | Descending
+      br
+
+      br
+
+      h4 Filter Options
+      label(for="filter-name") Filter by Name: 
+      input(type="text", id="filter-name")
+      br
+      label(for="filter-year-min") Filter by Release Year: 
+      br
+      label(for="filter-year-min") Min: 
+      input(type="number", id="filter-year-min")
+      label(for="filter-year-max")  Max:
+      input(type="number", id="filter-year-max")
+      br
+
+      label(for="filter-users-count") Filter by Users Count: 
+      br
+      label(for="filter-users-count-min") Min: 
+      input(type="number", id="filter-users-count-min")
+      label(for="filter-users-count-max")  Max:
+      input(type="number", id="filter-users-count-max")
+      br
+
+      label(for="filter-downloads") Filter by Daily Downloads: 
+      br
+      label(for="filter-downloads-min") Min: 
+      input(type="number", id="filter-downloads-min")
+      label(for="filter-downloads-max")  Max:
+      input(type="number", id="filter-downloads-max")
+      br
+
+    br
+
+    form
+      h4 Chart
+      label(for="x-axis") Select X-Axis: 
+      select#x-axis(name="x-axis")
+        option(value="distribution") Distribution
+        option(value="manager") Packet Manger
+      br
+
+      label(for="y-axis") Select Y-Axis: 
+      select#y-axis(name="y-axis")
+        option(value="users-count") Users Count
+        option(value="daily-downloads") Daily Downloads
+      br
+
+      button(type="submit") Generate Chart
+    br
+
+    table(border="1")
+      h4 Table
+      thead
+        tr
+          th Distribution
+          th Release Year
+          th Users Count
+          th Daily Downloads
+          th Packet Manager
+      tbody
+        each distribution in distributions
+          tr
+            td #{distribution.name}
+            td #{distribution.releaseYear}
+            td #{distribution.usersCount}
+            td #{distribution.dailyDownloads}
+            td #{distribution.packetManager}
+block footer
+  include /components/footer

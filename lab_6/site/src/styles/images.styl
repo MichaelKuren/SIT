@@ -1,0 +1,27 @@
+.images
+  width 90%
+  display grid
+  grid-template-columns 1fr 2fr 1fr
+  gap 10px
+  margin 20px auto
+
+  .image-l
+    background LightGreen 
+
+  .image-c
+    background LightBlue
+
+  .image-r
+    background LightGrey
+
+
+  .image-l, .image-c, .image-r
+    text-align center
+    padding 10px
+
+    &__img
+      width 200px
+
+    &:hover
+      transform scale(1.03)
+      box-shadow 0 4px 8px rgba(0, 0, 0, 0.2)

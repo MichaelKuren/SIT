@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>LAB4_TASK</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .menu {
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+      }
+
+      .menu-item {
+        padding: 10px;
+      }
+
+      .gray {
+        background: LightGray;
+      }
+
+      .green {
+        background: LightGreen;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+        background: LightGreen;
+      }
+
+      .topic {
+        background: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .topic:last-child {
+        grid-column: span 3;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .topic:last-child {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <p class="menu-item green">Python</p>
+      <p class="menu-item gray">C</p>
+      <p class="menu-item green">Java</p>
+      <p class="menu-item gray">JavaScript</p>
+    </div>
+    <div class="container">
+      <div class="topic">
+        <b class="green">Python</b> <br />создан в 1989–1991 годах голландским
+        программистом <a href="#" class="green"> Гвидо ван Россумом</a> .
+      </div>
+      <div class="topic">
+        <b class="gray">C</b> <br />
+        разработан в 1969–1973 годах сотрудником Bell Labs
+        <a href="#" class="gray"> Деннисом Ритчи</a> .
+      </div>
+      <div class="topic">
+        <b class="green">Java</b> <br />разработан в 1990–1996 годах канадским
+        программистом <a href="#" class="green"> Джеймсом Гослингом </a> .
+      </div>
+      <div class="topic">
+        <b class="gray">JavaScript</b> <br />разработан в 1996 году, автор -
+        американский программист <a href="#" class="gray">Брендан Айк</a> .
+      </div>
+    </div>
+  </body>
+</html>

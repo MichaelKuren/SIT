@@ -1,0 +1,28 @@
+.menu-line
+  display flex
+  padding 5px 10px
+  background lightgrey
+  justify-content space-between
+  align-items center
+  gap 10px
+
+  .menu
+    display flex
+    align-items center
+    gap 10px
+
+    &__item
+      padding 5px 10px
+      background darkgrey
+      color white
+      cursor pointer
+
+      &--active
+        background grey
+        position relative
+        height 56px
+        top 10px
+
+      &:hover
+        transform scale(1.03)
+        box-shadow 0 4px 8px rgba(0, 0, 0, 0.2)

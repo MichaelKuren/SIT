@@ -1,0 +1,9 @@
+mixin createMenu(menu, active, title)
+  div.menu-line
+    div.menu-line__title #{title}
+    nav.menu
+      each value, key in menu
+        if active == key
+          a.menu__item.menu__item--active(href= value)= key
+        else
+          a.menu__item(href= value)= key

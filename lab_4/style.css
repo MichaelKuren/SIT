@@ -2,83 +2,195 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Source Code Pro;
 }
 
 body {
-  background-color: white;
+  font-family: Source Code Pro;
+  line-height: 1.6;
 }
 
-header {
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp12195645.jpg&f=1&nofb=1&ipt=9b31694d30ff0d8b61b853728933ac17514a2536e101f5e6bceb1537553b20fc&ipo=images");
-  background-size: cover;
-  background-position: center;
-  padding: 20px;
-  text-align: center;
-  color: white;
+.menu-line {
+  display: flex;
+  padding: 5px 10px;
+  background: LightGrey;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .menu {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
 }
 
-.menu a {
-  text-decoration: none;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.7);
+.menu-item {
   padding: 5px 10px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  background: DarkGrey;
+  color: white;
+  cursor: pointer;
 }
 
-.menu a:hover {
-  background-color: rgba(255, 255, 255, 1);
+.menu-item-active {
+  background: grey;
+  padding: 5px 10px;
+  position: relative;
+  height: 56px;
+  top: 10px;
+  color: white;
+  cursor: pointer;
 }
 
-h1 {
-  margin-top: 120px;
-  font-size: 2em;
-  color: #1793d1;
+.images {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.image-l {
+  background: #87cefa;
+  text-align: center;
+  background: LightGreen;
+}
+
+.image-c {
+  background: #87cefa;
+  text-align: center;
+  background: LightBlue;
+}
+
+.image-r {
+  background: #87cefa;
+  text-align: center;
+  background: LightGrey;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.logo {
+  margin: 10px 20px;
+}
+
+.logo-logo {
+  width: 50px;
+  height: 50px;
+  background: #add8e6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.logo-text {
+  width: 130px;
+  margin: 0 auto;
+  font-size: 14px;
 }
 
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
-  padding: 20px;
-  width: 80%;
-  margin: 0 auto;
+  margin: 20px 0;
 }
 
-.card {
-  background-color: white;
-  border: 1px solid grey;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
+.block-r {
   display: flex;
-  flex-direction: column;
+  justify-content: left;
+  margin-left: 10px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+  background: #f5f5f5;
+}
+
+.block-l {
+  display: flex;
   justify-content: space-between;
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+  background: #f5f5f5;
 }
 
-.image {
-  background-color: #aad1e9;
-  padding: 20px;
-  margin-bottom: 10px;
-}
-
-h3 {
-  margin: 10px 0;
+.block-image {
+  width: 30%;
+  display: flex;
+  margin: 10px;
+  background: LightBlue;
+  justify-content: center;
 }
 
 footer {
-  background-color: white;
-  border-top: 1px solid grey;
+  background-color: #ddd;
   padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   font-size: 0.9em;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: right;
+  background: grey;
+  padding: 10px;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 5px;
+  border: 1px solid #ddd;
+  width: 60%;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: 1fr;
+  }
+
+  .logos {
+    flex-wrap: wrap;
+  }
+
+  .menu-line {
+    justify-content: center;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu-item-active {
+    position: static;
+    height: auto;
+  }
+
+  .logos {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

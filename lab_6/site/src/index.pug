@@ -1,0 +1,12 @@
+extends template
+
+block header
+  include /components/header
+  +createMenu(dictMenu, "Home", "Home Page")
+block content
+  include /components/images
+  include /components/logos
+  include /components/blocks
+
+block footer
+  include /components/footer
